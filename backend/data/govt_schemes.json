@@ -1,0 +1,79 @@
+[
+  {
+    "id": "scheme_tn_01",
+    "state": "Tamil Nadu",
+    "scheme_name": "Kalaignarin All Village Integrated Agricultural Development Programme (KAVIADP)",
+    "description": "50% direct subsidy on bio-pesticides, neem formulations, and integrated pest management kits for small and marginal farmers.",
+    "subsidy_percentage": 50,
+    "max_subsidy_amount_per_acre": 500,
+    "applicable_crops": ["Paddy", "Cotton", "Tomato", "Sugarcane", "Groundnut", "Banana"],
+    "kvk_contact": "Krishi Vigyan Kendra (KVK) - Tindivanam / Kattankulathur (TNAU) | Agri Dept Helpline: 1800-425-1666",
+    "claim_procedure": "Present Aadhaar Card, Chitta/Patta land records, and purchase receipt at nearest Block Primary Agricultural Co-operative Credit Society (PACCS) or Uzhavar Sandhai office."
+  },
+  {
+    "id": "scheme_tn_02",
+    "state": "Tamil Nadu",
+    "scheme_name": "National Mission on Sustainable Agriculture (NMSA) - Tamil Nadu Chapter",
+    "description": "Financial assistance of ₹500/acre for soil health card-based micro-nutrient and generic pest management adoption.",
+    "subsidy_percentage": 40,
+    "max_subsidy_amount_per_acre": 400,
+    "applicable_crops": ["Paddy", "Wheat", "Cotton", "Tomato", "Millets"],
+    "kvk_contact": "Department of Agriculture & Farmers Welfare, Chepauk, Chennai | Uzhavan Mobile App",
+    "claim_procedure": "Apply through the official TN 'Uzhavan App' by uploading your digital Soil Health Card and voucher invoice."
+  },
+  {
+    "id": "scheme_ap_01",
+    "state": "Andhra Pradesh",
+    "scheme_name": "YSR Rythu Bharosa & Subsidized Input Distribution (Rythu Bharosa Kendras)",
+    "description": "45% input subsidy on certified bio-fungicides and generic pest controllers delivered via village RBKs.",
+    "subsidy_percentage": 45,
+    "max_subsidy_amount_per_acre": 450,
+    "applicable_crops": ["Paddy", "Chilli", "Cotton", "Tomato", "Groundnut"],
+    "kvk_contact": "Rythu Bharosa Kendra (RBK) village assistance counter | Toll-Free: 155251",
+    "claim_procedure": "Visit your local village RBK (Rythu Bharosa Kendra) kiosk with e-Crop booking acknowledgment number to collect subsidized input allotment directly."
+  },
+  {
+    "id": "scheme_mh_01",
+    "state": "Maharashtra",
+    "scheme_name": "Dr. Panjabrao Deshmukh Organic Farming Mission & Mahadbt Pest Management Subsidy",
+    "description": "50% reimbursement for generic micro-nutrients and IPM bio-agents to combat cotton bollworms and soybean fungal diseases.",
+    "subsidy_percentage": 50,
+    "max_subsidy_amount_per_acre": 600,
+    "applicable_crops": ["Cotton", "Soybean", "Tomato", "Wheat", "Sugarcane"],
+    "kvk_contact": "KVK Baramati / KVK Karda (Washim) | MahaDBT Farmer Portal Helpline: 022-49150800",
+    "claim_procedure": "Submit claim on MahaDBT Farmer Portal under 'Krushi Yojana' with GST bill from authorized IFFCO / Krishi Seva Kendra within 30 days of purchase."
+  },
+  {
+    "id": "scheme_pb_01",
+    "state": "Punjab",
+    "scheme_name": "Punjab State Crop Diversification & Plant Protection Subsidy Scheme",
+    "description": "50% grant on recommended generic plant protection chemicals and trichogramma parasitoid cards for wheat, paddy, and cotton.",
+    "subsidy_percentage": 50,
+    "max_subsidy_amount_per_acre": 500,
+    "applicable_crops": ["Wheat", "Paddy", "Cotton", "Maize"],
+    "kvk_contact": "PAU Krishi Vigyan Kendra Ludhiana / Bathinda | Kisan Call Centre: 1800-180-1551",
+    "claim_procedure": "Verify eligibility with Block Agriculture Officer (BAO) and submit PAU-approved chemist bill for direct bank transfer (DBT)."
+  },
+  {
+    "id": "scheme_up_01",
+    "state": "Uttar Pradesh",
+    "scheme_name": "UP Pardarshi Kisan Seva Yojana - Plant Protection Grant",
+    "description": "Up to 50% DBT grant on certified generic agrochemicals, neem oils, and micronutrient kits.",
+    "subsidy_percentage": 50,
+    "max_subsidy_amount_per_acre": 450,
+    "applicable_crops": ["Wheat", "Paddy", "Sugarcane", "Tomato", "Mustard"],
+    "kvk_contact": "KVK Kanpur Dehat / Varanasi | UP Agriculture Helpline: 1800-180-1551",
+    "claim_procedure": "Direct benefit transfer credited within 15 days upon registering transaction on pardarshi kisan portal (upagripardarshi.gov.in)."
+  },
+  {
+    "id": "scheme_central_01",
+    "state": "All India",
+    "scheme_name": "Sub-Mission on Plant Protection & Plant Quarantine (SMPPQ) / NFSM",
+    "description": "National support scheme providing up to 40% reimbursement on bio-pesticides and generic IPM chemicals.",
+    "subsidy_percentage": 40,
+    "max_subsidy_amount_per_acre": 350,
+    "applicable_crops": ["Paddy", "Wheat", "Cotton", "Tomato", "Pulses", "Oilseeds"],
+    "kvk_contact": "Central Kisan Call Centre (Toll-Free 1800-180-1551) & Nearest ICAR-KVK Center",
+    "claim_procedure": "Enroll via PM-Kisan linked credentials at local Krishi Vigyan Kendra or CSC (Common Service Center)."
+  }
+]
