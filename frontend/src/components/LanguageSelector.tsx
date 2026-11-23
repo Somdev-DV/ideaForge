@@ -43,7 +43,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
   }
 
   return (
-    <div className="w-full max-w-3xl mx-auto my-6 p-6 bg-gradient-to-b from-slate-900/90 to-slate-950/90 border border-emerald-500/30 rounded-3xl shadow-2xl backdrop-blur-md">
+    <div className="language-panel w-full max-w-3xl mx-auto my-6 p-6 bg-gradient-to-b from-slate-900/90 to-slate-950/90 border border-emerald-500/30 rounded-3xl shadow-2xl backdrop-blur-md">
       <div className="flex items-center gap-3 mb-4">
         <div className="p-3 bg-emerald-500/20 rounded-2xl border border-emerald-500/40 text-emerald-400">
           <Globe2 className="w-7 h-7" />
@@ -65,7 +65,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
             <button
               key={lang.code}
               onClick={() => onSelectLanguage(lang.code)}
-              className={`relative flex flex-col items-center justify-center p-4 rounded-2xl transition-all duration-200 border-2 cursor-pointer ${
+              className={`language-card relative flex flex-col items-center justify-center p-4 rounded-2xl transition-all duration-200 border-2 cursor-pointer ${
                 isSelected
                   ? 'bg-emerald-600/30 border-emerald-400 text-white shadow-lg shadow-emerald-500/20 scale-[1.02]'
                   : 'bg-slate-800/60 border-slate-700/60 text-slate-300 hover:border-emerald-500/50 hover:bg-slate-800'

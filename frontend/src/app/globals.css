@@ -1,26 +1,283 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #07110d;
+  --foreground: #edfdf4;
+  --emerald: #34d399;
+  --emerald-bright: #6ee7b7;
+  --surface: rgba(15, 23, 22, 0.82);
+  --border: rgba(110, 231, 183, 0.16);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
-  background: var(--background);
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 14% 8%, rgba(16, 185, 129, 0.13), transparent 24rem),
+    radial-gradient(circle at 86% 18%, rgba(20, 184, 166, 0.10), transparent 22rem),
+    linear-gradient(145deg, #07110d 0%, #0a1714 48%, #07110d 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  background-image:
+    linear-gradient(rgba(167, 243, 208, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(167, 243, 208, 0.035) 1px, transparent 1px);
+  background-size: 38px 38px;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+  z-index: -1;
+}
+
+::selection {
+  background: rgba(52, 211, 153, 0.32);
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07110d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f4d3d;
+  border: 2px solid #07110d;
+  border-radius: 999px;
+}
+
+.app-shell {
+  position: relative;
+  isolation: isolate;
+}
+
+.app-shell::before,
+.app-shell::after {
+  content: "";
+  position: fixed;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 999px;
+  filter: blur(70px);
+  opacity: 0.09;
+  pointer-events: none;
+  z-index: -1;
+  animation: ambientDrift 12s ease-in-out infinite alternate;
+}
+
+.app-shell::before {
+  left: -10rem;
+  top: 22%;
+  background: #10b981;
+}
+
+.app-shell::after {
+  right: -11rem;
+  bottom: 10%;
+  background: #14b8a6;
+  animation-delay: -6s;
+}
+
+.glass-header {
+  background: rgba(5, 15, 12, 0.78) !important;
+  border-bottom: 1px solid var(--border) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+}
+
+.hero-copy {
+  animation: riseIn 0.75s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.hero-copy h2 {
+  text-shadow: 0 12px 38px rgba(52, 211, 153, 0.12);
+}
+
+.farmer-form,
+.language-panel,
+.advisory-dashboard,
+.history-panel {
+  position: relative;
+  background:
+    linear-gradient(145deg, rgba(18, 31, 28, 0.94), rgba(8, 18, 16, 0.94)) padding-box,
+    linear-gradient(145deg, rgba(110, 231, 183, 0.32), rgba(71, 85, 105, 0.12), rgba(52, 211, 153, 0.18)) border-box;
+  border: 1px solid transparent !important;
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(18px);
+  animation: riseIn 0.65s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.farmer-form::after,
+.language-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 0 40px rgba(52, 211, 153, 0.025);
+}
+
+.farmer-form select,
+.farmer-form input {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.farmer-form select:hover,
+.farmer-form input:hover {
+  border-color: rgba(52, 211, 153, 0.48);
+  background: rgba(30, 41, 38, 0.98);
+}
+
+.farmer-form select:focus,
+.farmer-form input:focus {
+  border-color: rgba(52, 211, 153, 0.85);
+  box-shadow:
+    0 0 0 3px rgba(52, 211, 153, 0.10),
+    0 12px 28px rgba(16, 185, 129, 0.08);
+  transform: translateY(-1px);
+}
+
+.language-panel {
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.language-card,
+.decision-card,
+.weather-banner,
+.history-item {
+  transition:
+    transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.language-card:hover,
+.decision-card:hover,
+.history-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(52, 211, 153, 0.48) !important;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.24);
+}
+
+.language-card:active,
+.decision-card:active,
+.history-item:active {
+  transform: translateY(-1px) scale(0.995);
+}
+
+.weather-banner {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.weather-banner::after {
+  content: "";
+  position: absolute;
+  width: 12rem;
+  height: 12rem;
+  right: -6rem;
+  top: -7rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  box-shadow:
+    0 0 0 22px rgba(255, 255, 255, 0.025),
+    0 0 0 44px rgba(255, 255, 255, 0.018);
+}
+
+.decision-card {
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, rgba(15, 23, 22, 0.98), rgba(12, 21, 19, 0.98)) padding-box,
+    linear-gradient(145deg, rgba(110, 231, 183, 0.22), rgba(71, 85, 105, 0.12)) border-box;
+  border: 1px solid transparent !important;
+}
+
+.advisory-action {
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 16px 38px rgba(16, 185, 129, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.advisory-action::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-120%) skewX(-20deg);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  transition: transform 0.55s ease;
+}
+
+.advisory-action:hover::before {
+  transform: translateX(120%) skewX(-20deg);
+}
+
+.advisory-action:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.07);
+  box-shadow: 0 22px 44px rgba(16, 185, 129, 0.30);
+}
+
+.advisory-action:active {
+  transform: translateY(0) scale(0.99);
+}
+
+.advisory-dashboard > * {
+  animation: riseIn 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.advisory-dashboard > *:nth-child(2) {
+  animation-delay: 0.06s;
+}
+
+.advisory-dashboard > *:nth-child(3) {
+  animation-delay: 0.12s;
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ambientDrift {
+  from {
+    transform: translate3d(-2%, -2%, 0) scale(0.92);
+  }
+  to {
+    transform: translate3d(5%, 7%, 0) scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

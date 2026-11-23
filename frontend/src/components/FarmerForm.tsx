@@ -127,7 +127,7 @@ export const FarmerForm: React.FC<FarmerFormProps> = ({ language, onSubmit, isLo
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-4xl mx-auto bg-slate-900/80 border border-slate-700/80 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl text-left"
+      className="farmer-form w-full max-w-4xl mx-auto bg-slate-900/80 border border-slate-700/80 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl text-left"
     >
       <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-800">
         <div className="p-3 bg-emerald-500/20 text-emerald-400 rounded-2xl border border-emerald-500/30">
@@ -355,7 +355,7 @@ export const FarmerForm: React.FC<FarmerFormProps> = ({ language, onSubmit, isLo
       <button
         type="submit"
         disabled={isLoading}
-        className="w-full py-5 bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 hover:from-emerald-500 hover:to-teal-500 text-white font-extrabold rounded-2xl shadow-xl shadow-emerald-600/30 text-lg flex items-center justify-center gap-3 transition-all cursor-pointer disabled:opacity-60"
+        className="advisory-action w-full py-5 bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 hover:from-emerald-500 hover:to-teal-500 text-white font-extrabold rounded-2xl shadow-xl shadow-emerald-600/30 text-lg flex items-center justify-center gap-3 cursor-pointer disabled:opacity-60"
       >
         {isLoading ? (
           <>

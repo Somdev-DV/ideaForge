@@ -37,13 +37,13 @@ export const AdvisoryDashboard: React.FC<AdvisoryDashboardProps> = ({
   const isRainRisk = !weather.spray_safe;
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-6 text-left">
+    <div className="advisory-dashboard w-full max-w-5xl mx-auto space-y-6 text-left">
       {/* Top Banner with Audio Readout */}
       <AudioPlayer text={advisory_text} language={language} />
 
       {/* Weather Safety Guardrail Banner */}
       <div
-        className={`p-6 rounded-3xl border-2 transition-all flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-xl ${
+        className={`weather-banner p-6 rounded-3xl border-2 transition-all flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-xl ${
           isRainRisk
             ? 'bg-amber-950/70 border-amber-500/80 text-amber-100'
             : 'bg-emerald-950/70 border-emerald-500/80 text-emerald-100'
@@ -86,7 +86,7 @@ export const AdvisoryDashboard: React.FC<AdvisoryDashboardProps> = ({
       {/* Grid of 4 Core Decision Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Card 1: Active Molecule & Generic vs Branded Savings */}
-        <div className="bg-slate-900/90 border border-slate-700/80 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+        <div className="decision-card bg-slate-900/90 border border-slate-700/80 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-4">
               <div className="p-3 bg-teal-500/20 text-teal-400 rounded-2xl border border-teal-500/30">
@@ -152,7 +152,7 @@ export const AdvisoryDashboard: React.FC<AdvisoryDashboardProps> = ({
         </div>
 
         {/* Card 2: State Govt Scheme & Input Subsidy */}
-        <div className="bg-slate-900/90 border border-slate-700/80 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+        <div className="decision-card bg-slate-900/90 border border-slate-700/80 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-4">
               <div className="p-3 bg-purple-500/20 text-purple-400 rounded-2xl border border-purple-500/30">
@@ -208,7 +208,7 @@ export const AdvisoryDashboard: React.FC<AdvisoryDashboardProps> = ({
         </div>
 
         {/* Card 3: Live Mandi Rate & Price Trend */}
-        <div className="bg-slate-900/90 border border-slate-700/80 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+        <div className="decision-card bg-slate-900/90 border border-slate-700/80 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-4">
               <div className="p-3 bg-blue-500/20 text-blue-400 rounded-2xl border border-blue-500/30">
@@ -265,7 +265,7 @@ export const AdvisoryDashboard: React.FC<AdvisoryDashboardProps> = ({
         </div>
 
         {/* Card 4: Net Profit & ROI Breakdown */}
-        <div className="bg-slate-900/90 border border-slate-700/80 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+        <div className="decision-card bg-slate-900/90 border border-slate-700/80 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-4">
               <div className="p-3 bg-emerald-500/20 text-emerald-400 rounded-2xl border border-emerald-500/30">

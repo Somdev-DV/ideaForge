@@ -76,9 +76,9 @@ export default function Home() {
   const t = translationsMap[language];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100 flex flex-col font-sans selection:bg-emerald-500 selection:text-white">
+    <div className="app-shell min-h-screen text-slate-100 flex flex-col font-sans selection:bg-emerald-500 selection:text-white">
       {/* Top Navbar */}
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-emerald-950/60 px-4 sm:px-8 py-3.5 flex items-center justify-between shadow-lg">
+      <header className="glass-header sticky top-0 z-50 backdrop-blur-xl px-4 sm:px-8 py-3.5 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="p-2.5 bg-gradient-to-br from-emerald-500 to-teal-700 rounded-2xl text-white shadow-md shadow-emerald-500/20">
             <Sprout className="w-6 h-6" />
@@ -119,7 +119,7 @@ export default function Home() {
         {/* Banner with Language Onboarding cards if user hasn't gotten an advisory */}
         {!advisoryResult && (
           <>
-            <div className="text-center max-w-3xl mb-4">
+            <div className="hero-copy text-center max-w-3xl mb-4">
               <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest bg-emerald-500/10 px-3.5 py-1.5 rounded-full border border-emerald-500/30 mb-3 inline-block">
                 Hackathon Track 02 - Problem Statement 01
               </span>
@@ -158,7 +158,7 @@ export default function Home() {
 
         {/* Recent Consultations Drawer / Section */}
         {showHistory && (
-          <div className="w-full max-w-4xl mt-10 p-6 bg-slate-900/90 border border-slate-800 rounded-3xl shadow-xl text-left">
+          <div className="history-panel w-full max-w-4xl mt-10 p-6 bg-slate-900/90 border border-slate-800 rounded-3xl shadow-xl text-left">
             <div className="flex items-center justify-between mb-4 pb-2 border-b border-slate-800">
               <h3 className="text-base font-bold text-white flex items-center gap-2">
                 <History className="w-5 h-5 text-emerald-400" />
@@ -179,7 +179,7 @@ export default function Home() {
                 {history.map((item) => (
                   <div
                     key={item.id}
-                    className="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs"
+                    className="history-item p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs"
                   >
                     <div>
                       <div className="font-bold text-white">
