@@ -1,8 +1,16 @@
 import type { NextConfig } from "next";
 
+const backendUrl = (process.env.NEXT_API_URL ?? "http://localhost:8000").replace(/\/+$/, "");
+
 const nextConfig: NextConfig = {
-  // Using webpack mode (Turbopack native binaries unavailable on this platform)
-  // Run with: next dev --webpack  /  next build --webpack
+  async rewrites() {
+    return [
+      {
+        source: "/api/:path*",
+        destination: `${backendUrl}/api/:path*`,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

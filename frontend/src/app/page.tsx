@@ -7,8 +7,6 @@ import { FarmerForm } from '../components/FarmerForm';
 import { AdvisoryDashboard } from '../components/AdvisoryDashboard';
 import { Sprout, History } from 'lucide-react';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
-
 export default function Home() {
   const [language, setLanguage] = useState<Language>('Tamil');
   const [advisoryResult, setAdvisoryResult] = useState<any | null>(null);
@@ -35,7 +33,7 @@ export default function Home() {
 
   const fetchHistory = async () => {
     try {
-      const res = await fetch(`${API_BASE_URL}/api/history?limit=5`);
+      const res = await fetch('/api/history?limit=5');
       if (res.ok) {
         const data = await res.json();
         setHistory(data);
@@ -48,7 +46,7 @@ export default function Home() {
   const handleFormSubmit = async (formData: any) => {
     setIsLoading(true);
     try {
-      const res = await fetch(`${API_BASE_URL}/api/advise`, {
+      const res = await fetch('/api/advise', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -63,7 +61,7 @@ export default function Home() {
       fetchHistory();
     } catch (err) {
       console.error('Advisory request failed:', err);
-      alert('Could not connect to backend server at ' + API_BASE_URL + '. Please ensure FastAPI is running on port 8000.');
+      alert('Could not connect to the advisory service. Please try again later.');
     } finally {
       setIsLoading(false);
     }
